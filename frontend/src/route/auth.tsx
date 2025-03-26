@@ -26,7 +26,7 @@ const AuthRoute: React.FC<AuthRouteProps> = ({ children, auth }) => {
                 }
             } catch (err) {
                 console.error('认证检查失败:', err);
-                navigate('/record/edit');
+                navigate('medicine/edit');
             }
             // 如果后端返回 401，则跳转到登录页
         };
