@@ -1,0 +1,47 @@
+.container {
+  width: 8px;
+  height: 0px;
+
+  overflow: visible;
+  position: relative;
+
+  display: inline-block;
+
+  vertical-align: middle;
+  transform: translate(6px, -1px);
+
+  .indicator {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    left: 0px;
+    top: -4px;
+  }
+}
+
+table {
+  .container {
+    width: 0px;
+  }
+}
+
+.flashing {
+  @bgColorFrom: var(--color-dot-flashing-from);
+  @bgColorTo: var(--color-dot-flashing-to);
+
+  @keyframes dot-flashing {
+    0% {
+      background-color: @bgColorFrom;
+    }
+    50% {
+      background-color: @bgColorTo;
+    }
+    100% {
+      background-color: @bgColorFrom;
+    }
+  }
+
+  animation: dot-flashing 0.8s infinite alternate;
+  animation-timing-function: ease;
+}

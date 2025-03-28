@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`字符引用渲染测试 html实体引用 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+        & © Æ Ď
+      <br
+        class="container wrapper non-select"
+      />
+      ¾ ℋ ⅆ
+      <br
+        class="container wrapper non-select"
+      />
+      ∲ ≧̸
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;
+
+exports[`字符引用渲染测试 unicode引用 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      # Ӓ Ϡ �
+      <br
+        class="container wrapper non-select"
+      />
+      " ആ ಫ
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;
+
+exports[`字符引用渲染测试 非法引用 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      &nbsp &x; &#; &#x;
+      <br
+        class="container wrapper non-select"
+      />
+      &#87654321;
+      <br
+        class="container wrapper non-select"
+      />
+      &#abcdef0;
+      <br
+        class="container wrapper non-select"
+      />
+      &ThisIsNotDefined; &hi?;
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;

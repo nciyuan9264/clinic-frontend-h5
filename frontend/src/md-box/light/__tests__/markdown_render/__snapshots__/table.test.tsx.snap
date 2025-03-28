@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`表格渲染测试 不对齐、可选的竖杠 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br table-container"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th
+              align="center"
+            >
+              abc
+            </th>
+            <th
+              align="right"
+            >
+              defghi
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td
+              align="center"
+            >
+              bar
+            </td>
+            <td
+              align="right"
+            >
+              baz
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;
+
+exports[`表格渲染测试 仅含表头 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br table-container"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th>
+              abc
+            </th>
+            <th>
+              defghi
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;
+
+exports[`表格渲染测试 普通表格 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br table-container"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th>
+              foo
+            </th>
+            <th>
+              bar
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              baz
+            </td>
+            <td>
+              bim
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;
+
+exports[`表格渲染测试 自定义渲染 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br"
+    >
+      <div
+        class="header"
+      >
+        自定义表格
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>
+              abc
+            </th>
+            <th>
+              defghi
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;

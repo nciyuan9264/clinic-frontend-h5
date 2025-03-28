@@ -1,0 +1,430 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Data 插槽式标签渲染测试 自定义渲染，验证正确渲染 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      行内插槽标签：
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      prefix
+      <span>
+        类型：user, 兜底内容：不支持的标签, 值：{"name":"xiaoming","age":12}
+      </span>
+      suffix
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      单行插槽标签：
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      prefix
+      <div>
+        类型：user, 兜底内容：不支持的标签, 值：{"name":"xiaoming","age":12}
+      </div>
+      suffix
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      这是&lt;my-custom-tag&gt;未开启的标签
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      这是
+      <span>
+        已开启的标签
+      </span>
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;
+
+exports[`html渲染测试 危险标签 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      &lt;link href="https://domain.com/index.css" /&gt;
+      <br
+        class="container wrapper non-select"
+      />
+      &lt;script src="https://domain.com/index.js"/&gt;
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;
+
+exports[`html渲染测试 对支持的html标签转义 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      &lt;span&gt;span 标签 &lt;/span&gt;
+      <br
+        class="container wrapper non-select"
+      />
+      &lt;u&gt;u 标签 &lt;/u&gt;
+      <br
+        class="container wrapper non-select"
+      />
+      br 标签 &lt; br/&gt;
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;
+
+exports[`html渲染测试 自定义渲染，验证正确渲染 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      这是
+      <strong>
+        加粗
+      </strong>
+      文本
+      <br
+        class="container wrapper non-select"
+      />
+      这是
+      <div
+        id="custom-rendered-mark-tag"
+      >
+        自定义渲染
+        <span
+          style="color: green;"
+        >
+          高亮中的
+          <u>
+            下划线
+          </u>
+        </span>
+        内容
+      </div>
+      文本
+      <br
+        class="container wrapper non-select"
+      />
+      这是&lt;blockquote&gt;不支持的标签&lt;/blockquote&gt;和后缀文本
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;
+
+exports[`html渲染测试 设置 enabledHtmlTags 开启标签支持 二次渲染时启用部分标签，验证启用生效 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -24,15 +24,25 @@
+        </span>
+        文本
+        <br
+          class="container wrapper non-select"
+        />
+-       这是&lt;strong&gt;加粗&lt;/strong&gt;文本
++       这是
++       <strong>
++         加粗
++       </strong>
++       文本
+        <br
+          class="container wrapper non-select"
+        />
+-       这是&lt;em&gt;强调&lt;/em&gt;文本
++       这是
++       <em
++         style="margin-right: 2px;"
++       >
++         强调
++       </em>
++       文本
+        <br
+          class="container wrapper non-select"
+        />
+        这是&lt;div&gt;普通&lt;/div&gt;文本
+        <br
+@@ -40,11 +50,14 @@
+        />
+        这是&lt;a href="https://test.com"&gt;链接&lt;/a&gt;文本
+        <br
+          class="container wrapper non-select"
+        />
+-       这是&lt;my-custom-tag&gt;自定义标签
++       这是
++       <my-custom-tag>
++         自定义标签
++       </my-custom-tag>
+      </div>
+      <br
+        class="container wrapper non-select"
+      />
+      "
+`;
+
+exports[`html渲染测试 设置 enabledHtmlTags 开启标签支持 启用全部标签，验证启用生效 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -42,23 +42,38 @@
+        </em>
+        文本
+        <br
+          class="container wrapper non-select"
+        />
+-       这是&lt;div&gt;普通&lt;/div&gt;文本
++       这是
++     </div>
+      <br
+        class="container wrapper non-select"
+      />
+-       这是&lt;a href="https://test.com"&gt;链接&lt;/a&gt;文本
++     <div>
++       普通
++     </div>
++     文本
+      <br
+        class="container wrapper non-select"
+      />
+      这是
+-       <my-custom-tag>
+-         自定义标签
+-       </my-custom-tag>
+-     </div>
++     <a
++       class="link"
++       href="https://test.com"
++       target="_blank"
++     >
++       链接
++     </a>
++     文本
++     <br
++       class="container wrapper non-select"
++     />
++     这是自定义标签
++     <div
++       class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
++     />
+      <br
+        class="container wrapper non-select"
+      />
+      
+"
+`;
+
+exports[`html渲染测试 设置 enabledHtmlTags 开启标签支持 启用部分标签，验证启用生效 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -24,15 +24,25 @@
+        </span>
+        文本
+        <br
+          class="container wrapper non-select"
+        />
+-       这是&lt;strong&gt;加粗&lt;/strong&gt;文本
++       这是
++       <strong>
++         加粗
++       </strong>
++       文本
+        <br
+          class="container wrapper non-select"
+        />
+-       这是&lt;em&gt;强调&lt;/em&gt;文本
++       这是
++       <em
++         style="margin-right: 2px;"
++       >
++         强调
++       </em>
++       文本
+        <br
+          class="container wrapper non-select"
+        />
+        这是&lt;div&gt;普通&lt;/div&gt;文本
+        <br
+@@ -40,11 +50,14 @@
+        />
+        这是&lt;a href="https://test.com"&gt;链接&lt;/a&gt;文本
+        <br
+          class="container wrapper non-select"
+        />
+-       这是&lt;my-custom-tag&gt;自定义标签
++       这是
++       <my-custom-tag>
++         自定义标签
++       </my-custom-tag>
+      </div>
+      <br
+        class="container wrapper non-select"
+      />
+      "
+`;
+
+exports[`html渲染测试 默认不支持的html标签 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      &lt;img src="https://domain.com/index.png" /&gt;
+      <br
+        class="container wrapper non-select"
+      />
+      &lt;input /&gt;
+      <br
+        class="container wrapper non-select"
+      />
+      &lt;textarea /&gt;
+      <br
+        class="container wrapper non-select"
+      />
+      &lt;table /&gt;
+      <br
+        class="container wrapper non-select"
+      />
+      &lt;html /&gt;
+      <br
+        class="container wrapper non-select"
+      />
+      &lt;body /&gt;
+      <br
+        class="container wrapper non-select"
+      />
+      &lt;head /&gt;
+      <br
+        class="container wrapper non-select"
+      />
+      &lt;meta /&gt;
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;
+
+exports[`html渲染测试 默认支持的html标签 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      <span>
+        span 标签
+      </span>
+      <br
+        class="container wrapper non-select"
+      />
+      <u>
+        u 标签
+      </u>
+      <br
+        class="container wrapper non-select"
+      />
+      br 标签
+      <br
+        class="container wrapper non-select"
+      />
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;

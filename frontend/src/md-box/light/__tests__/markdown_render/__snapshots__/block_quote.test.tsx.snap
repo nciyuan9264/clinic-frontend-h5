@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`引用渲染测试 嵌套的引用 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <blockquote
+      class="auto-hide-last-sibling-br"
+    >
+      
+
+      <blockquote
+        class="auto-hide-last-sibling-br"
+      >
+        
+
+        <blockquote
+          class="auto-hide-last-sibling-br"
+        >
+          
+
+          <div
+            class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+          >
+            foo
+            <br
+              class="container wrapper non-select"
+            />
+            bar
+          </div>
+          <br
+            class="container wrapper non-select"
+          />
+          
+
+        </blockquote>
+        <br
+          class="container wrapper non-select"
+        />
+        
+
+      </blockquote>
+      <br
+        class="container wrapper non-select"
+      />
+      
+
+    </blockquote>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;
+
+exports[`引用渲染测试 简单多行引用 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <blockquote
+      class="auto-hide-last-sibling-br"
+    >
+      
+
+      <h1
+        class="header auto-hide-last-sibling-br"
+      >
+        Foo
+      </h1>
+      <br
+        class="container wrapper non-select"
+      />
+      
+
+      <div
+        class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+      >
+        bar
+        <br
+          class="container wrapper non-select"
+        />
+        baz
+        <br
+          class="container wrapper non-select"
+        />
+        baz
+        <br
+          class="container wrapper non-select"
+        />
+        bar
+      </div>
+      <br
+        class="container wrapper non-select"
+      />
+      
+
+    </blockquote>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;

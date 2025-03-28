@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SSE } from 'sse.js';
-import { MdBox } from '@flow-web/md-box';
+import { MdBox } from '@/md-box/full/index';
 import styles from './index.module.less';
 
 const Chat = () => {

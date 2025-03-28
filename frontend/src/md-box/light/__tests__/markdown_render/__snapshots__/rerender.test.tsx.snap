@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`二次渲染测试（rerender） Markdown普通文本二次渲染 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -16,11 +16,11 @@
+      
+
+      <div
+        class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+      >
+-       这是第
++       这是第二个段落
+      </div>
+      <br
+        class="container wrapper non-select"
+      />
+      "
+`;

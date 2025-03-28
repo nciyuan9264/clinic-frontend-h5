@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`自动适配RTL方向渲染测试 不开启autoFitRTL时永远不自动切换RTL方式布局 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -6,11 +6,11 @@
+      theme-mode="light"
+    >
+      <div
+        class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+      >
+-       english prefix
++       english prefixاد الروبوت غير متاح وغير قادر على إرسال
+      </div>
+      <br
+        class="container wrapper non-select"
+      />
+      "
+`;
+
+exports[`自动适配RTL方向渲染测试 取消开关支持二次渲染 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -1,10 +1,10 @@
+  <DocumentFragment>
+    <div
+      class="container flow-markdown-body theme-default"
+      data-show-indicator="false"
+-     dir="rtl"
++     dir="ltr"
+      theme-mode="light"
+    >
+      <div
+        class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+      >"
+`;
+
+exports[`自动适配RTL方向渲染测试 开启autoFitRTL时当内容某次更新判定为RTL语言时，则切换RTL方式布局: 变回LTR语言 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -1,16 +1,16 @@
+  <DocumentFragment>
+    <div
+      class="container flow-markdown-body theme-default"
+      data-show-indicator="false"
+-     dir="rtl"
++     dir="ltr"
+      theme-mode="light"
+    >
+      <div
+        class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+      >
+-       english prefixاد الروبوت غير متاح وغير قادر على إرسال
++       english prefix
+      </div>
+      <br
+        class="container wrapper non-select"
+      />
+      "
+`;
+
+exports[`自动适配RTL方向渲染测试 开启autoFitRTL时当内容某次更新判定为RTL语言时，则切换RTL方式布局: 变成RTL语言 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+@@ -1,16 +1,16 @@
+  <DocumentFragment>
+    <div
+      class="container flow-markdown-body theme-default"
+      data-show-indicator="false"
+-     dir="ltr"
++     dir="rtl"
+      theme-mode="light"
+    >
+      <div
+        class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+      >
+-       english prefix
++       english prefixاد الروبوت غير متاح وغير قادر على إرسال
+      </div>
+      <br
+        class="container wrapper non-select"
+      />
+      "
+`;

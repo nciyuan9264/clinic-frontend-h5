@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`自定义公式渲染 Latex格式（括号形式）公式 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      行内语法：
+      <div>
+        这是公式“1+1=2”的html
+      </div>
+      <br
+        class="container wrapper non-select"
+      />
+      单行语法：
+      <div>
+        这是公式“1+1=2”的html
+      </div>
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;
+
+exports[`自定义公式渲染 美元符号格式公式 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      行内语法：
+      <div>
+        这是公式“1+1=2”的html
+      </div>
+      <br
+        class="container wrapper non-select"
+      />
+      单行语法：
+      <div>
+        这是公式“1+1=2”的html
+      </div>
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;

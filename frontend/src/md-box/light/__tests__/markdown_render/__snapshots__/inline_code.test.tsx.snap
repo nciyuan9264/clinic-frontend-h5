@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`内联代码块渲染测试 单行、多行内联代码块 1`] = `
+<DocumentFragment>
+  <div
+    class="container flow-markdown-body theme-default"
+    data-show-indicator="false"
+    dir="ltr"
+    theme-mode="light"
+  >
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      前缀
+      <code>
+        print('hello world')
+      </code>
+      后缀
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+    <div
+      class="auto-hide-last-sibling-br paragraph paragraph-element br-paragraph-space"
+    >
+      前缀
+      <code>
+        int a = 1; print('hello world')
+      </code>
+      后缀
+    </div>
+    <br
+      class="container wrapper non-select"
+    />
+    
+
+  </div>
+</DocumentFragment>
+`;

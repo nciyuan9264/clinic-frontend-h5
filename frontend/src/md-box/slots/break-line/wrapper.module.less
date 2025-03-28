@@ -1,0 +1,15 @@
+.wrapper {
+  &.non-select {
+    user-select: none;
+  }
+}
+
+:global(.flow-markdown-body) {
+  :global(.auto-hide-last-sibling-br) {
+    + .wrapper {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}

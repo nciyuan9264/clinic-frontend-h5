@@ -1,0 +1,23 @@
+.standard-space() {
+  content: '';
+  margin: 1em;
+  display: block;
+
+  font-size: var(--md-box-paragraph-spacing);
+}
+
+:global(.flow-markdown-body) {
+  /**
+   * 只有三类容器内的换行元素等于段间距：
+   * 1. 根容器
+   * 2. 块引用容器
+   * 3. 自定义class容器（新增，只要有这个class的，内部换行都变成段间距）
+   */
+  &,
+  blockquote,
+  :global(.br-paragraph-space) {
+    > .container {
+      .standard-space();
+    }
+  }
+}
