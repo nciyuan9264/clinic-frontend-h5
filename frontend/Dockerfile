@@ -5,7 +5,9 @@ FROM node:18-alpine AS builder
 WORKDIR /usr/src/app
 
 # 3️⃣ 安装 pnpm（Alpine 版需要额外安装 bash）
-RUN apk add --no-cache bash && npm install -g pnpm
+RUN echo "https://mirrors.aliyun.com/alpine/v3.21/main/" > /etc/apk/repositories && \
+    echo "https://mirrors.aliyun.com/alpine/v3.21/community/" >> /etc/apk/repositories && \
+    apk add --no-cache bash && npm install -g pnpm
 
 # 4️⃣ 复制 package.json 和 pnpm-lock.yaml，并安装依赖
 COPY package.json pnpm-lock.yaml ./
