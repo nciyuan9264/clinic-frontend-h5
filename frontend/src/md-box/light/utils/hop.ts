@@ -107,8 +107,8 @@ const standardNodeTypeMapping: Partial<
   image: StandardNodeTypeEnum.Image,
   delete: StandardNodeTypeEnum.StrikeThrough,
   text: StandardNodeTypeEnum.Text,
-  math: StandardNodeTypeEnum.MathBlock,
-  inlineMath: StandardNodeTypeEnum.InlineMath,
+  // math: StandardNodeTypeEnum.MathBlock,
+  // inlineMath: StandardNodeTypeEnum.InlineMath,
 };
 
 export const convertToStanardNodeTypeEnum = (

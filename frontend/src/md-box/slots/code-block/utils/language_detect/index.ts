@@ -55,7 +55,7 @@
 // };
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const detectLanguage = (code: string) => {
+export const detectLanguage = () => {
   // const data = await getContext().call({ code });
   return undefined;
 };

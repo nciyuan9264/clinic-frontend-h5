@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { isNull } from 'lodash-es';
 import { domToReact } from 'html-react-parser';
 
@@ -34,8 +32,8 @@ export const renderEm: RenderFunction<
     spacingAfterChineseEm !== false &&
     detectIsChinese(getInnerText(node).slice(-1) ?? '') &&
     !isNull(node.nextSibling) &&
-    (isElementType(node.nextSibling) || isTextType(node.nextSibling)) &&
-    detectIsChinese(getInnerText(node.nextSibling).slice(0, 1) ?? '');
+    (isElementType(node.nextSibling as any) || isTextType(node.nextSibling as any)) &&
+    detectIsChinese(getInnerText(node.nextSibling as any).slice(0, 1) ?? '');
 
   const spacing =
     typeof spacingAfterChineseEm === 'boolean' ? 2 : spacingAfterChineseEm;
@@ -47,7 +45,7 @@ export const renderEm: RenderFunction<
       raw={node}
       parents={parents}
     >
-      {domToReact(node.children, {
+      {domToReact(node.children as any, {
         replace: renderRest,
       })}
     </ComposedEmphasis>

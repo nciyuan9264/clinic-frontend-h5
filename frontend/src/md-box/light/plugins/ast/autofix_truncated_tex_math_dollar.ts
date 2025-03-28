@@ -177,14 +177,14 @@ export class AutofixTruncatedTexMathDollarAstPlugin extends BaseAstPlugin {
             ? {
                 type: 'inlineMath',
                 value: mathContent,
-              }
+              } as any
             : [],
         ),
         true,
       );
     } else if (item.type === 'inlineMath' || item.type === 'math') {
       const rawValue =
-        item.type === 'math' ? item.meta ?? item.value : item.value;
+        (item as any).type === 'math' ? (item as any).meta ?? (item as any).value : (item as any).value;
 
       const maxLegalPrefixLen = findMaxLegalPrefixEndIndex({
         src: rawValue,
@@ -193,7 +193,7 @@ export class AutofixTruncatedTexMathDollarAstPlugin extends BaseAstPlugin {
 
       if (shouldStopAutofix(rawValue, maxLegalPrefixLen)) {
         const insertingContent: Content =
-          item.type === 'inlineMath'
+          (item as any).type === 'inlineMath'
             ? {
                 type: 'text',
                 value: `$${rawValue}$`,
@@ -215,11 +215,11 @@ export class AutofixTruncatedTexMathDollarAstPlugin extends BaseAstPlugin {
       const mathContent = rawValue.slice(0, maxLegalPrefixLen).trim();
 
       const insertingContent: Content =
-        item.type === 'inlineMath'
+        (item as any).type === 'inlineMath'
           ? {
               type: 'inlineMath',
               value: mathContent,
-            }
+            } as any
           : {
               type: 'paragraph',
               children: [

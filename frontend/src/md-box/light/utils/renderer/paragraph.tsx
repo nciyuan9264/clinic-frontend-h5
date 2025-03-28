@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { domToReact, attributesToProps } from 'html-react-parser';
 import cs from 'classnames';
 
@@ -34,7 +32,7 @@ export const renderParagraph: RenderFunction<true, RenderParagraphOptions> = (
           className={cs(className, blockClassName)}
           forceBrInterSpacing={forceBrInterSpacing}
         >
-          {domToReact(node.children, {
+          {domToReact(node.children as any, {
             replace: renderRest,
           })}
         </ComposedParagraph>

@@ -84,7 +84,7 @@ const isCodeBlockElement = (node: DOMNode): node is Element => {
   const { childNodes } = node;
 
   /** 假如pre下没有任何code元素，则取消处理 */
-  if (!childNodes.find((childNode) => isElementType(childNode, 'code'))) {
+  if (!childNodes.find((childNode) => isElementType((childNode as any), 'code'))) {
     return false;
   }
 
@@ -119,7 +119,7 @@ const renderCodeBlocks = (
 ) => {
   const {
     autoHideCodeHeaderLanguage:
-      _autoHideCodeHeaderLanguage = HIDE_HEADER_LANGUAGES,
+    _autoHideCodeHeaderLanguage = HIDE_HEADER_LANGUAGES,
     renderRest,
     parents,
     compact,
@@ -147,16 +147,15 @@ const renderCodeBlocks = (
 
           const classNameOfBlock =
             styles[
-              `code-group-item--${
-                codeBlocks.length <= 1 || !compact
-                  ? 'normal'
-                  : (
-                      {
-                        0: 'begin',
-                        [codeBlocks.length - 1]: 'end',
-                      } as const
-                    )[index] ?? 'center'
-              }`
+            `code-group-item--${codeBlocks.length <= 1 || !compact
+              ? 'normal'
+              : (
+                {
+                  0: 'begin',
+                  [codeBlocks.length - 1]: 'end',
+                } as const
+              )[index] ?? 'center'
+            }`
             ];
 
           const { childNodes = [] } = node;
@@ -164,14 +163,14 @@ const renderCodeBlocks = (
             return (
               <GroupItemWrapper>
                 {() => {
-                  if (isElementType(node, 'code')) {
-                    const language = getLanguageFromElement(node);
-                    const meta = getMetaFromElement(node);
+                  if (isElementType((node as any), 'code')) {
+                    const language = getLanguageFromElement((node as any));
+                    const meta = getMetaFromElement((node as any));
 
                     return (
                       <ComposedCodeBlock
                         parents={parents}
-                        code={getInnerText(node)}
+                        code={getInnerText((node as any))}
                         language={language}
                         meta={meta}
                         showHeader={
@@ -196,17 +195,17 @@ const renderCodeBlocks = (
                     );
                   }
 
-                  if (isElementType(node)) {
+                  if (isElementType((node as any))) {
                     return (
                       <pre key={index} className={className}>
-                        {renderRest(node)}
+                        {renderRest((node as any))}
                       </pre>
                     );
                   }
 
                   return (
                     <pre key={index} className={className}>
-                      {domToReact([node])}
+                      {domToReact([(node as any)])}
                     </pre>
                   );
                 }}
@@ -221,14 +220,14 @@ const renderCodeBlocks = (
 
 type SplitItem =
   | {
-      isCodeBlockGroup: true;
-      codeBlocks: MdBoxCodeBlockGroupItem[];
-    }
+    isCodeBlockGroup: true;
+    codeBlocks: MdBoxCodeBlockGroupItem[];
+  }
   | {
-      isCodeBlockGroup: false;
-      target: DOMNode;
-      code: string;
-    };
+    isCodeBlockGroup: false;
+    target: DOMNode;
+    code: string;
+  };
 
 interface SplitToCodeBlockGroupParams {
   children: DOMNode[];
@@ -299,90 +298,90 @@ export const renderCodeBlockGroup: RenderFunction<
   node,
   { renderRest, codeBarConfig, adjacentCodeAsGroup, callbacks = {}, parents },
 ) => {
-  if (!isElementType(node)) {
-    return;
-  }
+    if (!isElementType(node)) {
+      return;
+    }
 
-  const { childNodes } = node;
+    const { childNodes } = node;
 
-  if (childNodes.every((item) => !isCodeBlockElement(item))) {
-    return;
-  }
+    if (childNodes.every((item) => !isCodeBlockElement((item as any)))) {
+      return;
+    }
 
-  const splitResult = splitToCodeBlockGroup({
-    children: childNodes,
-    adjacentCodeAsGroup,
-  });
+    const splitResult = splitToCodeBlockGroup({
+      children: childNodes as any,
+      adjacentCodeAsGroup,
+    });
 
-  const { onCodeBarExpandChange } = callbacks;
+    const { onCodeBarExpandChange } = callbacks;
 
-  return renderReactElement(
-    node.name,
-    attributesToProps(node.attribs),
-    splitResult.map((item, index) => {
-      if (item.isCodeBlockGroup) {
-        const { codeBlocks } = item;
+    return renderReactElement(
+      node.name,
+      attributesToProps(node.attribs),
+      splitResult.map((item, index) => {
+        if (item.isCodeBlockGroup) {
+          const { codeBlocks } = item;
 
-        const isLastItem = index === splitResult.length - 1;
+          const isLastItem = index === splitResult.length - 1;
 
-        const {
-          finished,
-          compact = false,
-          showCodeBar,
-          autoHideCodeHeaderLanguage,
-          ...restConfig
-        } = (isFunction(codeBarConfig)
-          ? codeBarConfig({ codeBlocks })
-          : codeBarConfig) || {};
+          const {
+            finished,
+            compact = false,
+            showCodeBar,
+            autoHideCodeHeaderLanguage,
+            ...restConfig
+          } = (isFunction(codeBarConfig)
+            ? codeBarConfig({ codeBlocks })
+            : codeBarConfig) || {};
 
-        const showBar = showCodeBar ?? Boolean(codeBarConfig);
+          const showBar = showCodeBar ?? Boolean(codeBarConfig);
 
-        const indentTabs = Math.min(
+          const indentTabs = Math.min(
           /** 最大支持的缩进级别 */ 8,
-          ...codeBlocks.map((codeBlockItem) =>
-            Math.floor(getIndentFromCodeElememt(codeBlockItem.target) / 2),
-          ),
-        );
+            ...codeBlocks.map((codeBlockItem) =>
+              Math.floor(getIndentFromCodeElememt(codeBlockItem.target) / 2),
+            ),
+          );
 
-        const loading = isLastItem && !finished;
+          const loading = isLastItem && !finished;
 
-        return (
-          <ComposedCodeBar
-            raw={node}
-            parents={parents}
-            showBar={showBar}
-            loading={loading}
-            key={index}
-            onCodeBarExpandChange={(currentState: boolean) =>
-              onCodeBarExpandChange?.(currentState, codeBlocks?.at(0)?.language)
-            }
-            style={{
-              marginLeft: indentTabs
-                ? `${indentTabs * INDENT_WIDTH}px`
-                : undefined,
-            }}
-            codeBlocks={codeBlocks}
-            {...restConfig}
-          >
-            {(expand) =>
-              (showBar ? expand : true) && (
-                <>
-                  {renderCodeBlocks(codeBlocks, {
-                    renderRest,
-                    autoHideCodeHeaderLanguage,
-                    compact,
-                    callbacks,
-                    indentTabs,
-                    loading,
-                  })}
-                </>
-              )
-            }
-          </ComposedCodeBar>
-        );
-      } else {
-        return <Fragment key={index}>{renderRest(item.target)}</Fragment>;
-      }
-    }),
-  );
-};
+          return (
+            <ComposedCodeBar
+              raw={node}
+              parents={parents}
+              showBar={showBar}
+              loading={loading}
+              key={index}
+              onCodeBarExpandChange={(currentState: boolean) =>
+                onCodeBarExpandChange?.(currentState, codeBlocks?.at(0)?.language)
+              }
+              style={{
+                marginLeft: indentTabs
+                  ? `${indentTabs * INDENT_WIDTH}px`
+                  : undefined,
+              }}
+              codeBlocks={codeBlocks}
+              {...restConfig}
+            >
+              {(expand) =>
+                (showBar ? expand : true) && (
+                  <>
+                    {renderCodeBlocks(codeBlocks, {
+                      renderRest,
+                      autoHideCodeHeaderLanguage,
+                      compact,
+                      callbacks,
+                      indentTabs,
+                      loading,
+                    })}
+                  </>
+                )
+              }
+            </ComposedCodeBar>
+          );
+        } else {
+          return <Fragment key={index}>{renderRest(item.target)}</Fragment>;
+        }
+      }),
+    );
+  };

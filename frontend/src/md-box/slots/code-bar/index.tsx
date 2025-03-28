@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import cs from 'classnames';
 
-import  IconLoading from './resources/loading_icon.svg';
-import  IconChevronDown from './resources/chevron_down_icon.svg';
+import IconLoading from './resources/loading_icon.svg';
+import IconChevronDown from './resources/chevron_down_icon.svg';
 import {
   MdBoxCodeBarProps,
   useMdBoxConfig,
@@ -44,7 +44,7 @@ export const CodeBar: React.FC<MdBoxCodeBarProps> = (props) => {
           onClick={() => setExpand((prev) => !prev)}
           style={style}
         >
-          <IconLoading className={cs(styles.icon, styles.rotating)} />
+          <img src={IconLoading} className={cs(styles.icon, styles.rotating)} />
           <span className={styles.loadingName}>{codeBarLoadingText}</span>
         </div>
       );
@@ -64,11 +64,10 @@ export const CodeBar: React.FC<MdBoxCodeBarProps> = (props) => {
         <div className={styles.title}>
           {expand ? expandedFinishedText : unExpandFinishedText}
         </div>
-        <IconChevronDown
-          className={cs(styles.icon, {
-            [styles.reverse]: expand,
-          })}
-        />
+        <img src={IconChevronDown} className={cs(styles.icon, {
+          [styles.reverse]: expand,
+        })} />
+
       </div>
     );
   };

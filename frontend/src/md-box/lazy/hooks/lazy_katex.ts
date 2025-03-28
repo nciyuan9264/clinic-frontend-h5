@@ -44,7 +44,7 @@ export const useLazyKatex = (): KatexType => {
         static ParseError = DefaultParseError;
       },
     [handleFetchKatex],
-  );
+  ) as any;
 
   return katex ?? defaultKatex;
 };

@@ -152,7 +152,7 @@ export const Markdown: React.FC<MarkdownProps> = ({
 
   return (
     <>
-      {domToReact(processedNode, {
+      {domToReact((processedNode as any), {
         replace: (node) => renderCustomNode(node, restProps),
       })}
     </>

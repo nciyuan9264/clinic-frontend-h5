@@ -5,7 +5,7 @@ import { defaults, isBoolean, isNumber } from 'lodash-es';
 import cs from 'classnames';
 import { Viewer } from '@/viewer-react';
 
-import ErrorIcon from './resources/icon-error.svg';
+import ErrorIcon  from './resources/icon-error.svg';
 import { resizeImage } from '../../utils';
 import { MdBoxImageProps, ImageEventData, ImageStatus } from '../../contexts';
 
@@ -104,11 +104,11 @@ export const Image: React.FC<MdBoxImageProps> = ({
 
   const wrapperSize = isNumber(width) &&
     isNumber(height) && {
-      width: '100%',
-      height: 0,
-      paddingBottom: `min(${(height / width) * 100}%, ${height}px)`,
-      maxWidth: width,
-    };
+    width: '100%',
+    height: 0,
+    paddingBottom: `min(${(height / width) * 100}%, ${height}px)`,
+    maxWidth: width,
+  };
 
   return (
     <div
@@ -156,9 +156,9 @@ export const Image: React.FC<MdBoxImageProps> = ({
                 display: 'inline-block',
                 ...(hideViewer
                   ? {
-                      width: 0,
-                      height: 0,
-                    }
+                    width: 0,
+                    height: 0,
+                  }
                   : {}),
               }}
             >
@@ -195,7 +195,7 @@ export const Image: React.FC<MdBoxImageProps> = ({
                       onImageLoadComplete?.();
                     }}
                   >
-                    <ErrorIcon className={styles.fallbackIcon} />
+                    <img src={ErrorIcon} className={styles.fallbackIcon} />
                   </div>
                 }
                 onLoadingComplete={(result) => {

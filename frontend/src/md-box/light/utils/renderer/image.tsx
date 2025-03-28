@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Element, attributesToProps } from 'html-react-parser';
 
 import { isElementType, isTextType } from './utils';
@@ -39,9 +37,9 @@ const hasSiblingText = (node: Element, options: HasSiblingTextOptions = {}) => {
   const isTextLikeOfIndex = (targetIndex: number) =>
     targetIndex < children.length &&
     targetIndex >= 0 &&
-    (isTextType(children[targetIndex]) ||
+    (isTextType(children[targetIndex] as any) ||
       (regardSiblingBrAsText
-        ? isElementType(children[targetIndex], 'br')
+        ? isElementType(children[targetIndex] as any, 'br')
         : false));
 
   return {

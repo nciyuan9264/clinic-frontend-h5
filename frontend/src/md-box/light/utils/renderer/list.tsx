@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { isUndefined } from 'lodash-es';
 
 import { isElementType, isTextType } from './utils';
@@ -14,11 +12,11 @@ export const renderList: RenderFunction = (node, { renderRest, parents }) => {
   }
   const className = node.children.every(
     (child) =>
-      isTextType(child) ||
-      (isElementType(child, 'li') &&
-        !isUndefined(child.children[0]) &&
-        isElementType(child.children[0], 'input') &&
-        child.children[0].attribs.type === 'checkbox'),
+      isTextType(child as any) ||
+      (isElementType(child as any, 'li') &&
+        !isUndefined((child  as any).children[0]) &&
+        isElementType((child  as any).children[0] as any, 'input') &&
+        (child  as any).children[0].attribs.type === 'checkbox'),
   )
     ? 'tasklist'
     : undefined;

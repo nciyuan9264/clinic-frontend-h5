@@ -24,7 +24,7 @@ export const renderTable: RenderFunction = (node, { renderRest, parents }) => {
           parents={parents}
           className={cs(className, blockClassName)}
         >
-          {domToReact(node.children, {
+          {domToReact((node as any).children, {
             replace: renderRest,
           })}
         </ComposedTable>

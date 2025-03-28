@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { domToReact } from 'html-react-parser';
 
 import { isElementType } from './utils';
@@ -23,7 +21,7 @@ export const renderStrong: RenderFunction<true> = (
 
   return (
     <ComposedStrong node={node} raw={node} parents={parents}>
-      {domToReact(node.children, {
+      {domToReact((node as any).children, {
         replace: renderRest,
       })}
     </ComposedStrong>

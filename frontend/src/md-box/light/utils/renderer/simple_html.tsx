@@ -33,8 +33,8 @@ export const renderSimpleHtml: RenderFunction<true, RenderSimpleHtmlOptions> = (
 
   const children = node.children.length
     ? node.children.map((item, index) => (
-        <Fragment key={index}>{renderRest(item)}</Fragment>
-      ))
+      <Fragment key={index}>{renderRest((item as any))}</Fragment>
+    ))
     : undefined;
 
   if (renderDataSlot && ['data-inline', 'data-block'].includes(tagName)) {
@@ -44,9 +44,9 @@ export const renderSimpleHtml: RenderFunction<true, RenderSimpleHtmlOptions> = (
       <>
         {renderDataSlot({
           display: tagName === 'data-inline' ? 'inline' : 'block',
-          type,
-          value: parseJSONWithNull(htmlEntity.decode(value, { strict: false })),
-          alt,
+          type: (type as any),
+          value: parseJSONWithNull(htmlEntity.decode((value as any), { strict: false })),
+          alt: (alt as any),
           children,
         }) ?? alt}
       </>
@@ -92,7 +92,7 @@ export const renderSimpleHtml: RenderFunction<true, RenderSimpleHtmlOptions> = (
   if (node.children.length === 1) {
     const firstChildren = node.children[0];
 
-    if (isTextType(firstChildren) && !firstChildren.data.trim()) {
+    if (isTextType((firstChildren as any)) && !(firstChildren as any).data.trim()) {
       return <></>;
     }
   }

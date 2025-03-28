@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { RenderFunction } from '../../type';
 
 /**
@@ -7,7 +5,7 @@ import { RenderFunction } from '../../type';
  * @param node html-react-parser解析的原始节点
  */
 export const renderDanger: RenderFunction<false> = (node) => {
-  if (node.type === 'tag' || node.type === 'text' || node.type === 'root') {
+  if (node.type === 'tag' || node.type === 'text' || (node.type as any) === 'root') {
     return;
   }
   return <></>;

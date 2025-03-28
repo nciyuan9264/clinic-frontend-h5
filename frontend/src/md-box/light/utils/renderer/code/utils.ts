@@ -10,22 +10,15 @@ const getCodeElement = (node: DOMNode): Element | undefined => {
   }
 
   if (isElementType(node, 'pre')) {
-    return node.childNodes.find((childNode): childNode is Element =>
-      isElementType(childNode, 'code'),
-    );
+    return (node as any).childNodes.find((childNode: any): childNode is Element => isElementType(childNode, 'code'));
   }
 };
 
-export const getLanguageFromElement = (
-  node: DOMNode,
-  defaultLanguage = DEFAULT_LANGUAGE,
-): string => {
+export const getLanguageFromElement = (node: DOMNode, defaultLanguage = DEFAULT_LANGUAGE): string => {
   const codeElement = getCodeElement(node);
 
   if (codeElement) {
-    return (
-      codeElement.attribs?.class?.match(/language-(.*)/)?.[1] || defaultLanguage
-    );
+    return codeElement.attribs?.class?.match(/language-(.*)/)?.[1] || defaultLanguage;
   }
 
   return defaultLanguage;
@@ -47,7 +40,7 @@ export const getMetaFromElement = (node: DOMNode, removeBuiltIn = true) => {
   return (
     metaString
       .split(/\s+/)
-      .filter((item) => !item.match(/^__[^_].*/))
+      .filter(item => !item.match(/^__[^_].*/))
       .join(' ') || undefined
   );
 };
@@ -59,9 +52,7 @@ export const getIndentFromCodeElememt = (node: DOMNode) => {
     return 0;
   }
 
-  const matchResult = metaString.match(
-    /(\s|^)__indent=(?<indent>[0-9]+)(\s|$)/,
-  );
+  const matchResult = metaString.match(/(\s|^)__indent=(?<indent>[0-9]+)(\s|$)/);
 
   if (!matchResult) {
     return 0;

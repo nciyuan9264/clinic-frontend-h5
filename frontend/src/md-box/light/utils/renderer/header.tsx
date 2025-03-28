@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { isElementType } from './utils';
 import { RenderFunction } from '../../type';
 import { createMdBoxSlots } from '../../../contexts';

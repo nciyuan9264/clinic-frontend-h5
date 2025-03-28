@@ -41,7 +41,7 @@ export const parseMarkdown = (
       gfmStrikethroughFromMarkdown,
       gfmTaskListItemFromMarkdown,
     ],
-  });
+  } as any );
 };
 
 export const stringifyMarkdown = (ast: Root | Content, strip = false) => {

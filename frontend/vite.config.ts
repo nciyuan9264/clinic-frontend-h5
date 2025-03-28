@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react-swc'
 import path from "path";
 
 export default defineConfig({
-    plugins: [react()],
+    plugins: [react() ],
     base: '/h5/', // 让静态资源路径加上 /h5/
     server: {
         port: 80,

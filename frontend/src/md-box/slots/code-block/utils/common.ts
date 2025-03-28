@@ -12,7 +12,7 @@ export const useAutoDetectLanguage = (
 
   const handleAutoDelectLanguage = async () => {
     if (innerLanguage === PLAIN_TEXT) {
-      const delected = await detectLanguage(code);
+      const delected = await detectLanguage();
       /* istanbul ignore if */
       if (delected) {
         setInnerLanguage(delected);

@@ -74,7 +74,7 @@ export const CodeBlock: React.FC<MdBoxCodeBlockProps> = ({
         {showHeader && (
           <div className={styles.header}>
             <div className={styles.text}>
-              <CodeIcon className={styles.icon} />
+              <img src={CodeIcon} className={styles.icon} alt="" />
               {currentLanguage}
             </div>
             <div className={styles.actions}>
@@ -84,9 +84,9 @@ export const CodeBlock: React.FC<MdBoxCodeBlockProps> = ({
                   data-testid="code_block_copy"
                 >
                   {isCopied ? (
-                    <DoneIcon className={styles.img} />
+                    <img src={DoneIcon} className={styles.img} />
                   ) : (
-                    <CopyIcon className={styles.img} />
+                    <img src={CopyIcon} className={styles.img} />
                   )}
                 </div>
               </div>
@@ -97,9 +97,9 @@ export const CodeBlock: React.FC<MdBoxCodeBlockProps> = ({
                     data-testid="code_block_mode_switch"
                   >
                     {isLocalDark ? (
-                      <DayIcon className={styles.img} />
+                      <img src={DayIcon} className={styles.img} />
                     ) : (
-                      <NightIcon className={styles.img} />
+                      <img src={NightIcon} className={styles.img} />
                     )}
                   </div>
                 </div>

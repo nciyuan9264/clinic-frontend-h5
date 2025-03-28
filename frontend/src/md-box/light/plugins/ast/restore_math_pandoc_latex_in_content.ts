@@ -24,7 +24,7 @@ export class RestoreMathPandocLatexInContentAstPlugin extends BaseAstPlugin {
       return;
     }
 
-    if (!isTypeOfContent(item, 'code', 'inlineCode', 'math', 'inlineMath')) {
+    if (!isTypeOfContent(item, 'code', 'inlineCode')) {
       return;
     }
 

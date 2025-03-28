@@ -53,7 +53,7 @@ export const BlockElement: FC<BlockElementProps> = ({
             ),
           },
           ...node.children.map((item, index) => (
-            <Fragment key={index}>{renderRest?.(item)}</Fragment>
+            <Fragment key={index}>{renderRest?.(item as any)}</Fragment>
           )),
         )}
       {isFunction(children)

@@ -42,7 +42,7 @@ export const getInnerText = (node: DOMNode): string => {
     return node.data;
   }
   if (isElementType(node)) {
-    return node.children.map(getInnerText).join('');
+    return node.children.map((getInnerText as any)).join('');
   }
   return '';
 };

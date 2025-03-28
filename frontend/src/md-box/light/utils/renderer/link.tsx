@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { pick } from 'lodash-es';
 import { domToReact, attributesToProps } from 'html-react-parser';
 
@@ -40,7 +38,7 @@ export const renderLink: RenderFunction<true, RenderLinkOptions> = (
       title={isAutoLink ? undefined : title}
       {...pick(callbacks, 'onLinkRender', 'onLinkClick', 'onSendMessage')}
     >
-      {domToReact(node.children, {
+      {domToReact(node.children as any, {
         replace: renderRest,
       })}
     </ComposedLink>
