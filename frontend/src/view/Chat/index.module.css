@@ -1,0 +1,42 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(180deg, #feeddd 0%, #fff2de 52.09%, #ffffff 99.22%);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  text-align: center;
+}
+.chat-container .chat-message {
+  flex: 1;
+  width: 90%;
+  margin-top: 100px;
+}
+.chat-container .chat-input {
+  background-color: #FFF;
+  border: 1px solid #000;
+  width: 90%;
+  height: 50px;
+}
+.username {
+  margin-top: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+.logout-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(255, 75, 43, 0.3);
+  transition: all 0.3s ease;
+}
