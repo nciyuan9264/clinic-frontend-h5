@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { SSE } from 'sse.js';
-import { MdBox } from '@/md-box/full/index';
 import styles from './index.module.less';
+import MarkdownIt from "markdown-it";
+import katex from "markdown-it-katex";
+import prism from "markdown-it-prism";
+import "katex/dist/katex.min.css"; // 公式样式
+import "prismjs/themes/prism-tomorrow.css"; // 代码高亮主题
+const md = new MarkdownIt().use(katex).use(prism);
 
-const Chat: React.FC  = () => {
+const Chat: React.FC = () => {
   const [messages, setMessages] = useState([
     { role: 'system', content: '你是一个智能助手' },
   ]);
   const [input, setInput] = useState('');
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -77,17 +83,29 @@ const Chat: React.FC  = () => {
       console.error('请求失败:', error);
     }
   };
+  // 让滚动条保持在最底部
+  const scrollToBottom = () => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+    }
+  };
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   return (
     <div className={styles['chat-container']}>
-      <div className={styles['chat-message']}>
+      <div className={styles['chat-message']} ref={chatContainerRef}>
         {messages.map((msg, index) => (
           <div key={index} className={styles['chat-item']} style={{
             color: '#fff',
             alignSelf: msg.role === "user" ? "flex-end" : "flex-start", // 右对齐 / 左对齐
             display: msg.role === "system" ? "none" : "flex", // 隐藏 system 消息
           }}>
-            <MdBox markDown={msg.content} smooth autoFixSyntax mode='dark' />
+            <div
+              className="markdown-body"
+              dangerouslySetInnerHTML={{ __html: md.render(msg.content) }}
+            />
           </div>
         ))}
       </div>

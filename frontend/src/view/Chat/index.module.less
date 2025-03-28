@@ -20,13 +20,15 @@
     width: 90%;
     margin-top: 50px;
     max-height: calc(100% - 100px);
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     overflow: scroll;
     // background: #fcfcfc;
 
     .chat-item{
+      display: flex;
+      flex-direction: column;
       max-width: 75%; /* 避免消息过长 */
-      padding: 8px 12px;
+      padding: 8px 20px;
       border-radius: 8px;
       word-wrap: break-word;
       background-color: #585858;

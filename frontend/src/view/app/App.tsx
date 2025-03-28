@@ -17,10 +17,10 @@ function App() {
     const i18nStore = useI18nStore();
     const { setEnv } = usePersonStore()
 
-    useAsyncEffect(async () => {
-        await initJsBridge();
-        setEnv({...(window as any).JsBridge });
-    }, []);
+    // useAsyncEffect(async () => {
+    //     await initJsBridge();
+    //     setEnv({...(window as any).JsBridge });
+    // }, []);
 
     return (
         <ConfigProvider
