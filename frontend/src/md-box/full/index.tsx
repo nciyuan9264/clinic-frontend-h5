@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 
 import { defaults, isBoolean } from 'lodash-es';
 import katex from 'katex';
@@ -14,7 +14,7 @@ export type MdBoxController = MdBoxLightController;
 
 export * from '../light';
 
-export const MdBox = forwardRef<MdBoxController, MdBoxProps>(
+export const MdBox = React.forwardRef<MdBoxController, MdBoxProps>(
   function MdBoxRenderFunction(
     { slots = {}, autoFixSyntax = true, ...restProps },
     ref,

@@ -1,4 +1,4 @@
-import React, { ComponentType, FC, createContext, useContext } from 'react';
+import React, { ComponentType, createContext, useContext } from 'react';
 
 import { MdBoxSlots, MdBoxSlotsWithRequired } from './type';
 import { createShallowedProvider } from '../../utils';
@@ -34,7 +34,7 @@ export const createMdBoxSlots = <T extends keyof MdBoxSlots>(
   name: T,
   DefaultComponent?: ComponentType<MdBoxSlotsPropsType<T>>,
 ) => {
-  const WrappedTarget: FC<MdBoxSlotsPropsType<T>> = (props) => {
+  const WrappedTarget: React.FC<MdBoxSlotsPropsType<T>> = (props) => {
     const Slots = useMdBoxSlots();
     const InnerTarget = Slots[name] ?? DefaultComponent;
 

@@ -1,4 +1,4 @@
-import React, { cloneElement, FC, isValidElement } from 'react';
+import React, { cloneElement, isValidElement } from 'react';
 
 import cs from 'classnames';
 
@@ -6,7 +6,7 @@ import { MdBoxParagraphProps } from '../../contexts';
 
 import styles from './index.module.less';
 
-export const Paragraph: FC<MdBoxParagraphProps> = ({
+export const Paragraph: React.FC<MdBoxParagraphProps> = ({
   children,
   className,
   forceBrInterSpacing = false,

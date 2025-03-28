@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import { isFunction, omit } from 'lodash-es';
 import cs from 'classnames';
@@ -31,7 +31,7 @@ const isCocoLink = (link: string) => {
 
 /** 被链接元素替换成的组件 */
 // eslint-disable-next-line max-lines-per-function
-export const Link: FC<MdBoxLinkProps> = ({
+export const Link: React.FC<MdBoxLinkProps> = ({
   className,
   style,
   href,

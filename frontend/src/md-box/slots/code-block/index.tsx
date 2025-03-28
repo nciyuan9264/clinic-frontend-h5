@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import copy from 'copy-to-clipboard';
 import cs from 'classnames';
@@ -17,7 +17,7 @@ import {
 
 import styles from './index.module.less';
 
-export const CodeBlock: FC<MdBoxCodeBlockProps> = ({
+export const CodeBlock: React.FC<MdBoxCodeBlockProps> = ({
   className,
   style,
   code,

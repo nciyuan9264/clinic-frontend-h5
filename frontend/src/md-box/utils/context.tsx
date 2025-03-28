@@ -1,4 +1,4 @@
-import React, { Context, FC, PropsWithChildren, useMemo } from 'react';
+import { Context, FC, PropsWithChildren, useMemo } from 'react';
 
 import { shallowEqual } from 'shallow-equal';
 

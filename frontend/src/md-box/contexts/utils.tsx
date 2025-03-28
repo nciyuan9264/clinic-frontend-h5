@@ -1,4 +1,4 @@
-import React, { Context, FC, PropsWithChildren, useMemo } from 'react';
+import React, { Context, PropsWithChildren, useMemo } from 'react';
 
 import { shallowEqual } from 'shallow-equal';
 
@@ -9,7 +9,7 @@ export const createShallowedProvider = <T extends Comparable>(
 ) => {
   const ContextProvider = context.Provider;
 
-  const TargetProvider: FC<
+  const TargetProvider: React.FC<
     PropsWithChildren<{
       value: T;
       afterMemoedProcess?: (value: T) => T;

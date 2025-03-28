@@ -1,9 +1,9 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { RawMathjaxTex, texToSvg } from '../mathjax-tex';
 import { MdBoxTexProps } from '../../contexts';
 
-export const AsyncLazyMathJaxTex: FC<MdBoxTexProps> = ({
+export const AsyncLazyMathJaxTex: React.FC<MdBoxTexProps> = ({
   className,
   style,
 

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import cs from 'classnames';
 
@@ -7,7 +7,7 @@ import styles from './styles/index.module.less';
 import { purifyHtml } from '../../utils';
 import { MdBoxCodeBlockHighlighterProps } from '../../contexts';
 
-export const PrismCodeBlockHighlighter: FC<MdBoxCodeBlockHighlighterProps> = ({
+export const PrismCodeBlockHighlighter: React.FC<MdBoxCodeBlockHighlighterProps> = ({
   code,
   language = '',
   className,

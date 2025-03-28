@@ -1,5 +1,4 @@
 import React, {
-  forwardRef,
   useEffect,
   useRef,
   useMemo,
@@ -51,7 +50,7 @@ export * from './hooks';
 
 export * from './extra';
 
-export const MdBoxLight = forwardRef<MdBoxLightController, MdBoxLightProps>(
+export const MdBoxLight = React.forwardRef<MdBoxLightController, MdBoxLightProps>(
   // eslint-disable-next-line max-lines-per-function
   function MdBoxLight(
     {

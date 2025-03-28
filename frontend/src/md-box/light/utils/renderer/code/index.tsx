@@ -1,4 +1,4 @@
-import React, { FC, Fragment, ReactNode } from 'react';
+import React, { Fragment, ReactNode } from 'react';
 
 import { isFunction } from 'lodash-es';
 import {
@@ -99,7 +99,7 @@ interface EmptyWrapperElementProps {
   children: (params?: BlockElementChildrenProps) => ReactNode;
 }
 
-const EmptyWrapperElement: FC<EmptyWrapperElementProps> = ({ children }) => (
+const EmptyWrapperElement: React.FC<EmptyWrapperElementProps> = ({ children }) => (
   <>{children()}</>
 );
 

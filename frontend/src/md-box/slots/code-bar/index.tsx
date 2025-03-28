@@ -1,4 +1,4 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import cs from 'classnames';
 
@@ -12,7 +12,7 @@ import {
 
 import styles from './index.module.less';
 
-export const CodeBar: FC<MdBoxCodeBarProps> = (props) => {
+export const CodeBar: React.FC<MdBoxCodeBarProps> = (props) => {
   const t = useMdBoxTranslate();
 
   const { mode } = useMdBoxConfig();

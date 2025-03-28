@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import cs from 'classnames';
 
@@ -6,7 +6,7 @@ import { MdBoxTableProps } from '../../contexts';
 
 import styles from './index.module.less';
 
-export const Table: FC<MdBoxTableProps> = ({
+export const Table: React.FC<MdBoxTableProps> = ({
   children,
   className,
   raw: _raw,

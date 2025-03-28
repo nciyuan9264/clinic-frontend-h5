@@ -1,4 +1,4 @@
-import React, { ReactNode, createElement } from 'react';
+import React, { createElement } from 'react';
 
 import { isRegExp } from 'lodash-es';
 import { DOMNode, Element, Text, domToReact } from 'html-react-parser';
@@ -67,7 +67,7 @@ export const renderDom: RenderFunction<false> = (node) => {
 export const renderReactElement = <P extends Record<string, unknown>>(
   tag: string,
   props: P,
-  children?: ReactNode[],
+  children?: React.ReactNode[],
 ) => {
   if (props.className === 'markdown-root') {
     return <>{children}</>;

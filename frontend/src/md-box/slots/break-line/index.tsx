@@ -15,7 +15,7 @@ export const BreakLine: FC<MdBoxBreakLineProps> = ({ className, style }) => {
 /** 扩展插槽版 BreakLine，加上必要的样式 */
 export const withMdBoxBreakLine = (
   Target: ComponentType<MdBoxBreakLineProps> | null,
-): FC<MdBoxBreakLineProps> => {
+): React.FC<MdBoxBreakLineProps> => {
   return function WrappedBreakLine({ className, ...restProps }) {
     return (
       <>

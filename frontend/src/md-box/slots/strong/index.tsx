@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import { MdBoxStrongProps } from '../../contexts';
 
-export const Strong: FC<MdBoxStrongProps> = ({
+export const Strong: React.FC<MdBoxStrongProps> = ({
   className,
   style,
   children,

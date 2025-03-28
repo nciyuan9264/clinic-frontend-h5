@@ -3,7 +3,7 @@ import { SSE } from 'sse.js';
 import { MdBox } from '@/md-box/full/index';
 import styles from './index.module.less';
 
-const Chat = () => {
+const Chat: React.FC  = () => {
   const [messages, setMessages] = useState([
     { role: 'system', content: '你是一个智能助手' },
   ]);

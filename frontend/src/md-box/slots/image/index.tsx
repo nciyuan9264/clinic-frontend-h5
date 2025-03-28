@@ -1,5 +1,5 @@
 /* eslint-disable max-lines-per-function */
-import React, { FC, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { defaults, isBoolean, isNumber } from 'lodash-es';
 import cs from 'classnames';
@@ -22,7 +22,7 @@ const convertHttpToHttps = (url: string) => {
 };
 
 /** 被图片元素替换成的组件 */
-export const Image: FC<MdBoxImageProps> = ({
+export const Image: React.FC<MdBoxImageProps> = ({
   className,
   style,
   raw: _raw,

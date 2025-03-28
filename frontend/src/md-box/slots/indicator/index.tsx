@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import cs from 'classnames';
 
@@ -6,7 +6,7 @@ import { MdBoxIndicatorProps } from '../../contexts';
 
 import styles from './index.module.less';
 
-export const Indicator: FC<MdBoxIndicatorProps> = ({ className, style }) => {
+export const Indicator: React.FC<MdBoxIndicatorProps> = ({ className, style }) => {
   return (
     <span className={styles.container}>
       <span

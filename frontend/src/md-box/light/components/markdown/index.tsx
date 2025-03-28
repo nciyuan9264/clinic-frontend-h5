@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { markedSmartypants } from 'marked-smartypants';
 import { mangle } from 'marked-mangle';
@@ -40,7 +40,7 @@ export type MarkdownProps = Pick<
   RenderCustomNodeOptions;
 
 // eslint-disable-next-line max-lines-per-function
-export const Markdown: FC<MarkdownProps> = ({
+export const Markdown: React.FC<MarkdownProps> = ({
   markDown,
   smartypants = false,
   enabledHtmlTags,

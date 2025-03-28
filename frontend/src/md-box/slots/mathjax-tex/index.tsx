@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { useMemo } from 'react';
 
 import { texToSvg } from './utils';
 import { RawMathjaxTex } from './components';
@@ -9,7 +9,7 @@ export { RawMathjaxTex, type RawMathjaxTexProps } from './components';
 
 export { texToSvg } from './utils';
 
-export const MathJaxTex: FC<MdBoxTexProps> = ({
+export const MathJaxTex: React.FC<MdBoxTexProps> = ({
   className,
   style,
 

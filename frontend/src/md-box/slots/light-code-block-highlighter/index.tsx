@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import cs from 'classnames';
 
@@ -6,7 +6,7 @@ import { MdBoxCodeBlockHighlighterProps } from '../../contexts';
 
 import styles from './index.module.less';
 
-export const LightCodeBlockHighlighter: FC<MdBoxCodeBlockHighlighterProps> = ({
+export const LightCodeBlockHighlighter: React.FC<MdBoxCodeBlockHighlighterProps> = ({
   language,
   code,
   className,

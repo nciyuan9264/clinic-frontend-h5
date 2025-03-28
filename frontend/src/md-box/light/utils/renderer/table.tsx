@@ -1,4 +1,4 @@
-import React, { attributesToProps, domToReact } from 'html-react-parser';
+import { attributesToProps, domToReact } from 'html-react-parser';
 import cs from 'classnames';
 
 import { isElementType } from './utils';
