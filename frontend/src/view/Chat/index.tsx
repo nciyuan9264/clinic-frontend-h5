@@ -35,6 +35,7 @@ const Chat: React.FC = () => {
 
       source.addEventListener('message', (ev: { data: any }) => {
         const chunk = JSON.parse(ev.data); // 解析流式返回的数据
+        console.log('wzy ev.data', ev.data);
         setMessages((prev) => {
           const lastMessage = prev[prev.length - 1];
 
